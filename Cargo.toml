@@ -13,6 +13,7 @@ include = ["LICENSE-APACHE.md", "LICENSE-MIT.md", "**/*.rs", "Cargo.toml"]
 all-features = true
 
 [dependencies]
+anyhow = "1.0.100"
 env_logger = "0.11.8"
 log = "0.4.29"
 pollster = "0.4.0"

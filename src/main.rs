@@ -1,3 +1,16 @@
 #![warn(clippy::all, rust_2018_idioms)]
 
-fn main() {}
+use anyhow::Error;
+use learn_wgpu::App;
+use winit::event_loop::EventLoop;
+
+fn main() -> anyhow::Result<(), Error> {
+    {
+        env_logger::init();
+    }
+
+    let event_loop = EventLoop::with_user_event().build()?;
+    let mut app = App::new();
+    event_loop.run_app(&mut app)?;
+    Ok(())
+}
